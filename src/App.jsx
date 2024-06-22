@@ -6,9 +6,14 @@ import Modal from "./components/Modal";
 function App() {
   const [modal, setModal] = useState(false);
 
+  const modalToggle = () => {
+    setModal(!modal);
+  };
+
   return (
-    <div>
-      <Modal />
+    <div className="App">
+      <button onClick={modalToggle}>Click Me</button>
+      {modal && <Modal modalToggle={modalToggle} />}
     </div>
   );
 }
